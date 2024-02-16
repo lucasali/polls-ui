@@ -2,11 +2,20 @@
 export default defineNuxtConfig({
   devtools: {
     enabled: true,
-
     timeline: {
-      enabled: true,
+      enabled: true
     },
   },
-  modules: ["@nuxtjs/tailwindcss", '@vueuse/nuxt'],
-  css: ["@/assets/css/main.css"],
+  css: ['@/assets/css/main.css'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt', 
+    '@nuxtjs/color-mode'
+  ],
+  colorMode: {
+    classSuffix: ''
+  },
+  tailwindcss: {
+    editorSupport: true
+  }
 })
