@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@layer base {
+  :root {
+    --background: 54 100% 94%;
+    --foreground: 150 7% 6%;
+
+    --primary: 255 92% 76%;
+
+    --border: 150 7% 6%;
+
+    --radius: 0.5rem;
+
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --background: 150 7% 6%;
+    --foreground: 54 100% 94%;
+
+    --primary: 255 92% 76%;
+
+    --border: 54 100% 94%;
+
+    --radius: 0.5rem;
+
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-dvh;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
