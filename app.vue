@@ -1,5 +1,9 @@
 <template>
-  <main class="grid h-[calc(100dvh-24px)] place-items-center p-8">
+  <header class="flex justify-end p-2">
+    <ThemeSelector></ThemeSelector>
+  </header>
+
+  <main class="container h-[calc(100dvh-24px-48px)]">
     <NuxtPage></NuxtPage>
   </main>
 
@@ -9,7 +13,14 @@
 <script lang="ts" setup>
 useHead({
   titleTemplate: title => {
-    return title ? `Poll • ${title}` : 'Polls'
-  }
+    return title ? `Polls • ${title}` : 'Polls'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/vnd.microsoft.icon',
+      href: '/favicon-dark.ico'
+    }
+  ]
 })
 </script>
