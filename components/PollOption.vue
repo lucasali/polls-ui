@@ -1,25 +1,32 @@
 <script lang="ts" setup>
+interface PollOption {
+  id: string
+  title: string
+  votes: number
+}
+
 interface Props {
-  active: boolean
+  option: PollOption
   index: number
 }
 
-const props = defineProps<Props>()
+const { option, index } = defineProps<Props>()
 </script>
 
 <template>
   <button
-    class="group rounded-md border-2 py-2 pl-2 pr-6 hover:bg-white hover:text-black"
-    :class="[{ 'bg-violet-400 ': active }]"
+    type="button"
+    class="group rounded-md border-2 py-2 pl-2 pr-6 hover:border-primary focus:outline-none focus:ring focus:ring-primary"
+    @click="$emit('vote', option.id)"
   >
     <div class="flex items-center gap-2">
       <div
-        class="grid size-8 place-items-center rounded-sm border-2 group-hover:border-black group-hover:bg-white group-hover:text-black"
+        class="grid size-8 place-items-center rounded-sm border-2 group-hover:border-primary group-hover:text-primary"
       >
-        {{ props.index }}
+        {{ index + 1 }}
       </div>
 
-      <p class="flex-1 text-pretty">
+      <p class="flex-1 text-pretty text-left group-hover:text-primary">
         <slot></slot>
       </p>
     </div>
