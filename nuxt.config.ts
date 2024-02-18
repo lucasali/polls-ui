@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt', 
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    'radix-vue/nuxt'
   ],
   colorMode: {
     classSuffix: ''
