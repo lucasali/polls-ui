@@ -14,7 +14,7 @@ interface Poll {
 const { id } = useRoute().params
 const { data } = await useFetch(`http://localhost:3333/polls/${id}`)
 
-const poll = (data.value as { poll: Poll }).poll
+const { poll } = data.value as { poll: Poll }
 
 useHead({
   title: poll.title
